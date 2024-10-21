@@ -1,0 +1,25 @@
+html, body {
+    height: 100%; /* Ensures the body takes full height */
+    margin: 0;    /* Removes default margin */
+    padding: 0;   /* Removes default padding */
+}
+
+body {
+    background: linear-gradient(90deg, rgba(29,241,253,1) 0%, rgba(29,67,253,1) 34%, rgba(252,69,69,1) 100%);
+    background-size: cover; /* Ensures the gradient covers the body fully */
+    min-height: 100vh;      /* Ensures the gradient applies across the viewport height */
+    color: #fff;            /* Optional: Makes text white for better contrast */
+}
+
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
