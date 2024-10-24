@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">To-Do List</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.task.label }} {{ form.task(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.priority.label }} {{ form.priority(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+        </form>
+
+        <ul class="list-group mt-4">
+            {% for i in range(todos|length) %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ todos[i].task }} - <strong>Priority: {{ todos[i].priority }}</strong>
+                    <a href="{{ url_for('delete', index=i) }}" class="btn btn-danger btn-sm">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
